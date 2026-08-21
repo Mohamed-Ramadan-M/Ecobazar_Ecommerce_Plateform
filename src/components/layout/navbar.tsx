@@ -7,36 +7,35 @@ import { Heart, ShoppingBasket } from "lucide-react"
 import Image from "next/image"
 import { NavbarSections } from './navbar-sections'
 import NavbarHeaders from './navbar-top'
-
-
-
+import { MobileNav } from './mobile-nav'
 
 export const Navbar = () => {
 
     return (
-        <div>
+        <header>
             <span >
                 <NavbarHeaders />
             </span>
-            {/* TODO: Main navigation bar with Logo, Search, Cart , favorites ,and user profile */}
             <div className="container m-0 mx-auto">
-                <div className="flex flex-row items-center justify-around py-4">
-                    <span>
+                <div className="flex flex-row items-center justify-between gap-4 py-4">
+                    <div className="flex min-w-0 items-center gap-1 sm:gap-3">
+                        <MobileNav />
                         <Image
                             src="/images/Logo.svg"
                             alt="Logo"
                             width={160}
                             height={60}
                             priority
+                            className="h-auto w-32 sm:w-40 lg:w-40"
                         />
-                    </span>
-                    <span>
+                    </div>
+                    <span className="hidden lg:block">
                         <Field orientation="horizontal">
                             <Input type="search" placeholder="Search..." className="w-90" />
                             <Button variant="primary">Search</Button>
                         </Field>
                     </span>
-                    <span className="flex flex-row items-center justify-center gap-2">
+                    <span className="flex shrink-0 flex-row items-center justify-center gap-2">
                         <Button variant="ghost" className="relative p-0">
                             <Heart className="w-6 h-6" />
                         </Button>
@@ -47,11 +46,10 @@ export const Navbar = () => {
                     </span>
                 </div>
             </div>
-            {/* TODO: Bottom navigation bar with categories and subcategories */}
-            <div className="bg-secondary">
+            <div className="hidden bg-secondary lg:block">
                 <NavbarSections />
             </div>
 
-        </div>
+        </header>
     )
 }

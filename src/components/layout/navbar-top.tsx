@@ -10,7 +10,7 @@ export const NavbarHeaders = () => {
         { label: "ar", value: "ar" },
     ]
     return (
-        <div className="bg-foreground text-background">
+        <div className="hidden bg-foreground text-background md:block">
             <div className="container m-0 mx-auto text-sm opacity-40">
                 <div className="flex flex-wrap items-center justify-around">
                     <span className="flex gap-1 items-center"> 
