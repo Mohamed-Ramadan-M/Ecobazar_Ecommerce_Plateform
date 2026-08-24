@@ -3,6 +3,7 @@ import { getMessages } from "next-intl/server";
 import '../globals.css'
 import  {Navbar}  from "@/components/layout/Navbar";
 import Footer from "@/components/layout/footer";
+import RouteSection from "@/components/common/route-section";
 
 export default async function LocaleLayout({
   children,
@@ -22,6 +23,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
+          <RouteSection/>
           {children}
           <Footer/>
         </NextIntlClientProvider>
