@@ -91,8 +91,8 @@ export const Products = () => {
                                     <TabsTrigger value="all">All</TabsTrigger>
                                     <TabsTrigger value="frutes">Fruits</TabsTrigger>
                                     <TabsTrigger value="Vegetable">Vegetable</TabsTrigger>
-                                    <TabsTrigger value="proten">Meat & Fish</TabsTrigger>
-                                    <TabsTrigger value="viewall">View All</TabsTrigger>
+                                    <TabsTrigger value="protein">Meat & Fish</TabsTrigger>
+                                    <TabsTrigger value="viewAll">View All</TabsTrigger>
                                 </TabsList>
                             </Tabs>
                         </span>
