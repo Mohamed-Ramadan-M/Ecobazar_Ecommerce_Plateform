@@ -6,7 +6,7 @@ import Gategories from "./_components/gategories";
 import InfoSection from "./_components/info-section";
 import LatestNews from "./_components/latest-news";
 import MainScreen from "./_components/main-screeen";
-import Products from "./_components/products";
+import Products from "./_components/products-main";
 
 
 export default function page() {
