@@ -34,16 +34,16 @@ const navSections: { title: string; href: string; subItems?: { title: string; hr
 ]
 
 export function NavbarSections() {
-        const t = useTranslations("navbar")
+        // const t = useTranslations("navbar")
 
     return (
         <NavigationMenu className="container m-0 mx-auto ">
             <NavigationMenuList className="flex flex-row items-center justify-around gap-5" >
                 <NavigationMenuItem >
-                    <NavigationMenuTrigger className="bg-primary text-md">{t("allcategories")}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-primary text-md">categories</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="w-96">
-                                <ListItem  href="#" title={t("home")} />
+                        <ul className="w-96 max-w-[calc(100vw-2rem)]">
+                                <ListItem  href="#" title="home" />
                                 <ListItem  href="#" title="page" />
                                 <ListItem  href="#" title="dddd" />
                                 <ListItem  href="#" title="ffff" />
@@ -53,12 +53,12 @@ export function NavbarSections() {
                 {navSections.map((section) => (
                     <NavigationMenuItem  key={section.title}>
                         {!section.subItems ? (
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href={section.href}>{t(section.title)}</Link>} />
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href={section.href}>{section.title}</Link>} />
                         ) : (
                             <>
-                                <NavigationMenuTrigger className="text-xl">{t(section.title)}</NavigationMenuTrigger>
+                                <NavigationMenuTrigger className="text-xl">{section.title}</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="w-96">
+                                    <ul className="w-96 max-w-[calc(100vw-2rem)]">
                                         {section.subItems?.map((subItem) => (
                                             <ListItem key={subItem.title} href={subItem.href} title={subItem.title} />
                                         ))}

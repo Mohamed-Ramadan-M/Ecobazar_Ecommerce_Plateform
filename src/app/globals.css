@@ -3,116 +3,81 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f0fdf4;
-  --accent-foreground: #166534;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #10b981;
-  --chart-1: #10b981;
-  --chart-2: #059669;
-  --chart-3: #34d399;
-  --chart-4: #6ee7b7;
-  --chart-5: #a7f3d0;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #3f3f46;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f0fdf4;
-  --sidebar-accent-foreground: #10b981;
-  --sidebar-border: #f4f4f5;
-  --sidebar-ring: #10b981;
-  --font-sans: Geist, ui-sans-serif, sans-serif, system-ui;
+  --background: #ffffff; /* White */
+  --foreground: #374151; /* Gray 700 */
+  --card: #ffffff; /* White */
+  --card-foreground: #374151; /* Gray 700 */
+  --popover: #ffffff; /* White */
+  --popover-foreground: #374151; /* Gray 700 */
+
+  --primary: #00B207; /* Ecobazar main color Green */
+  --primary-foreground: #ffffff; /* White */
+
+  --secondary-background: #e1f4e9; /* Mint Green / Light Green */
+  --secondary: #f3f4f6; /* Gray 100 */
+  --secondary-foreground: #1a2e05; /* Dark Olive Green */
+
+  --orange-pho: #ff8a00; /* Orange */
+
+  --muted: #f3f4f6; /* Gray 100 */
+  --muted-foreground: #9ca3af; /* Gray 400 */
+
+  --accent: #f4fbf7; /* Very Light Green */
+  --accent-foreground: #2c742f; /* Forest Green */
+
+  --destructive: #ef4444; /* Red 500 */
+  --destructive-foreground: #fafafa; /* Off White */
+
+  --border: #e5e7eb; /* Gray 200 */
+  --input: #e5e7eb; /* Gray 200 */
+  --ring: #00B207; /* Green */
+
+  --chart-1: #00B207; /* Green */
+  --chart-2: #2c742f; /* Forest Green */
+  --chart-3: #34d399; /* Emerald 400 */
+  --chart-4: #6ee7b7; /* Emerald 300 */
+  --chart-5: #a7f3d0; /* Emerald 200 */
+
+  --sidebar: #ffffff; /* White */
+  --sidebar-foreground: #374151; /* Gray 700 */
+  --sidebar-primary: #00B207; /* Green */
+  --sidebar-primary-foreground: #ffffff; /* White */
+  --sidebar-accent: #f4fbf7; /* Very Light Green */
+  --sidebar-accent-foreground: #00B207; /* Green */
+  --sidebar-border: #e5e7eb; /* Gray 200 */
+  --sidebar-ring: #00B207; /* Green */
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: Noto Serif, ui-serif, serif;
   --font-mono: Fira Code, ui-monospace, monospace;
+
   --radius: 0.5rem;
+
   --shadow-x: 0px;
   --shadow-y: 2px;
   --shadow-blur: 10px;
   --shadow-spread: 0px;
   --shadow-opacity: 0.05;
-  --shadow-color: ;
-  --shadow-2xs: 0px 2px 10px 0px hsl( / 0.03);
-  --shadow-xs: 0px 2px 10px 0px hsl( / 0.03);
-  --shadow-sm: 0px 2px 10px 0px hsl( / 0.05), 0px 1px 2px -1px hsl( / 0.05);
-  --shadow: 0px 2px 10px 0px hsl( / 0.05), 0px 1px 2px -1px hsl( / 0.05);
-  --shadow-md: 0px 2px 10px 0px hsl( / 0.05), 0px 2px 4px -1px hsl( / 0.05);
-  --shadow-lg: 0px 2px 10px 0px hsl( / 0.05), 0px 4px 6px -1px hsl( / 0.05);
-  --shadow-xl: 0px 2px 10px 0px hsl( / 0.05), 0px 8px 10px -1px hsl( / 0.05);
-  --shadow-2xl: 0px 2px 10px 0px hsl( / 0.13);
+  --shadow-color: 0 0% 0%; /* Black */
+
+  --shadow-2xs: 0px 2px 10px 0px hsl(0 0% 0% / 0.03); /* Black with 3% opacity */
+  --shadow-xs: 0px 2px 10px 0px hsl(0 0% 0% / 0.03); /* Black with 3% opacity */
+  --shadow-sm: 0px 2px 10px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05); /* Black with 5% opacity */
+  --shadow: 0px 2px 10px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05); /* Black with 5% opacity */
+  --shadow-md: 0px 2px 10px 0px hsl(0 0% 0% / 0.05), 0px 2px 4px -1px hsl(0 0% 0% / 0.05); /* Black with 5% opacity */
+  --shadow-lg: 0px 2px 10px 0px hsl(0 0% 0% / 0.05), 0px 4px 6px -1px hsl(0 0% 0% / 0.05); /* Black with 5% opacity */
+  --shadow-xl: 0px 2px 10px 0px hsl(0 0% 0% / 0.05), 0px 8px 10px -1px hsl(0 0% 0% / 0.05); /* Black with 5% opacity */
+  --shadow-2xl: 0px 2px 10px 0px hsl(0 0% 0% / 0.13); /* Black with 13% opacity */
+
   --tracking-normal: -0.015em;
   --spacing: 0.3rem;
-}
-
-.dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --card: #09090b;
-  --card-foreground: #fafafa;
-  --popover: #09090b;
-  --popover-foreground: #fafafa;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --accent: #111827;
-  --accent-foreground: #10b981;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fafafa;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #10b981;
-  --chart-1: #10b981;
-  --chart-2: #059669;
-  --chart-3: #34d399;
-  --chart-4: #6ee7b7;
-  --chart-5: #a7f3d0;
-  --sidebar: #09090b;
-  --sidebar-foreground: #a1a1aa;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1a1a1a;
-  --sidebar-accent-foreground: #10b981;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #10b981;
-  --font-sans: Geist, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: Noto Serif, ui-serif, serif;
-  --font-mono: Fira Code, ui-monospace, monospace;
-  --radius: 0.5rem;
-  --shadow-x: 0px;
-  --shadow-y: 4px;
-  --shadow-blur: 15px;
-  --shadow-spread: 0px;
-  --shadow-opacity: 0.2;
-  --shadow-color: 0 0 0;
-  --shadow-2xs: 0px 4px 15px 0px hsl(0 0 0 / 0.10);
-  --shadow-xs: 0px 4px 15px 0px hsl(0 0 0 / 0.10);
-  --shadow-sm: 0px 4px 15px 0px hsl(0 0 0 / 0.20), 0px 1px 2px -1px hsl(0 0 0 / 0.20);
-  --shadow: 0px 4px 15px 0px hsl(0 0 0 / 0.20), 0px 1px 2px -1px hsl(0 0 0 / 0.20);
-  --shadow-md: 0px 4px 15px 0px hsl(0 0 0 / 0.20), 0px 2px 4px -1px hsl(0 0 0 / 0.20);
-  --shadow-lg: 0px 4px 15px 0px hsl(0 0 0 / 0.20), 0px 4px 6px -1px hsl(0 0 0 / 0.20);
-  --shadow-xl: 0px 4px 15px 0px hsl(0 0 0 / 0.20), 0px 8px 10px -1px hsl(0 0 0 / 0.20);
-  --shadow-2xl: 0px 4px 15px 0px hsl(0 0 0 / 0.50);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-secondary-background: var(--secondary-background);
+  --color-orange-pho: var(--orange-pho);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -174,6 +139,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
