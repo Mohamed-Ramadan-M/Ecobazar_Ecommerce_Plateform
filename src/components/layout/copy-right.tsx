@@ -1,8 +1,11 @@
+"use client"
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { useTranslations } from 'next-intl';
 
 export function CopyRight() {
+    const t = useTranslations()
     return (
         <div className="container   mx-auto w-full bg-transparent py-4 px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
 
@@ -65,14 +68,14 @@ export function CopyRight() {
 
             {/* Copyright Text */}
             <div className="text-center">
-                <p>Shopery eCommerce © 2021. All Rights Reserved</p>
+                <p>{t("footer.copyright")}</p>
             </div>
 
             {/* Payment Methods */}
             <div className="flex flex-wrap items-center justify-center gap-2">
                 {/* Apple Pay */}
                 <Button variant={"outline"}>
-                     Pay
+                    Pay
                 </Button>
                 {/* Visa */}
                 <Button variant={"outline"}>
@@ -89,7 +92,7 @@ export function CopyRight() {
                 </Button>
                 {/* Secure Payment */}
                 <Button variant={"outline"}>
-                    <span className="flex items-center gap-0.5">🔒 Secure <span className="font-bold tracking-tight">Payment</span></span>
+                    <span className="flex items-center gap-0.5">🔒 {t("common.secure")} <span className="font-bold tracking-tight">{t("footer.securePayment")}</span></span>
                 </Button>
             </div>
 

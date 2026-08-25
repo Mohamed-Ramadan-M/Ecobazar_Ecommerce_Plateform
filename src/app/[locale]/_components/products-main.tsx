@@ -3,8 +3,10 @@ import { ProductCard } from "@/components/common/products-card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 
 export const Products = () => {
+    const t = useTranslations()
     const products = [
         {
             id: 1,
@@ -69,21 +71,21 @@ export const Products = () => {
             <div className="flex min-h-105 max-w-300 items-center px-4 py-10 sm:px-6 lg:px-12">
                 <div className="mx-auto max-w-6xl py-16 sm:px-6 sm:py-24 flex items-center flex-col lg:px-0">
                     <div className="flex flex-col justify-center items-center my-5 gap-3">
-                        <h1 className="text-3xl font-bold text-center sm:text-4xl">Introducing Our Products</h1>
+                        <h1 className="text-3xl font-bold text-center sm:text-4xl">{t("products.title")}</h1>
                         <span>
                             <Tabs defaultValue="all">
                                 <TabsList variant="line">
-                                    <TabsTrigger value="all">All</TabsTrigger>
-                                    <TabsTrigger value="frutes">Fruits</TabsTrigger>
-                                    <TabsTrigger value="Vegetable">Vegetable</TabsTrigger>
-                                    <TabsTrigger value="protein">Meat & Fish</TabsTrigger>
-                                    <TabsTrigger value="viewAll">View All</TabsTrigger>
+                                    <TabsTrigger value="all">{t("products.all")}</TabsTrigger>
+                                    <TabsTrigger value="frutes">{t("products.fruits")}</TabsTrigger>
+                                    <TabsTrigger value="Vegetable">{t("products.vegetable")}</TabsTrigger>
+                                    <TabsTrigger value="protein">{t("products.meatFish")}</TabsTrigger>
+                                    <TabsTrigger value="viewAll">{t("common.viewAll")}</TabsTrigger>
                                 </TabsList>
                             </Tabs>
                         </span>
                     </div>
                     <div className="w-full flex justify-end items-center my-3">
-                        <Link href="en/products" className="text-primary">View All <ArrowRight className="inline" /> </Link>
+                        <Link href="en/products" className="text-primary">{t("common.viewAll")} <ArrowRight className="inline" /> </Link>
                     </div>
 
                     <div className="grid grid-cols-1 gap-y-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">

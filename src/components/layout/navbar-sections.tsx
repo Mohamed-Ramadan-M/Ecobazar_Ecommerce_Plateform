@@ -14,53 +14,53 @@ import {
 } from "@/components/ui/navigation-menu"
 import { useTranslations } from "next-intl"
 
-const navSections: { title: string; href: string; subItems?: { title: string; href: string }[] }[] = [
+const navSections: { titleKey: string; href: string; subItems?: { titleKey: string; href: string }[] }[] = [
     {
-        title: "home",
+        titleKey: "home",
         href: "#"
     },
     {
-        title: "shop",
+        titleKey: "shop",
         href: "#"
     },
     {
-        title: "pages",
+        titleKey: "pages",
         href: "#"
     },
     {
-        title: "blog",
+        titleKey: "blog",
         href: "#"
     }
 ]
 
 export function NavbarSections() {
-        // const t = useTranslations("navbar")
+    const t = useTranslations("navbar")
 
     return (
         <NavigationMenu className="container m-0 mx-auto ">
             <NavigationMenuList className="flex flex-row items-center justify-around gap-5" >
                 <NavigationMenuItem >
-                    <NavigationMenuTrigger className="bg-primary text-md">categories</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-primary text-md">{t("allCategories")}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="w-96 max-w-[calc(100vw-2rem)]">
-                                <ListItem  href="#" title="home" />
-                                <ListItem  href="#" title="page" />
-                                <ListItem  href="#" title="dddd" />
-                                <ListItem  href="#" title="ffff" />
+                                <ListItem  href="#" titleKey="home" />
+                                <ListItem  href="#" titleKey="pages" />
+                                <ListItem  href="#" titleKey="shop" />
+                                <ListItem  href="#" titleKey="blog" />
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 {navSections.map((section) => (
-                    <NavigationMenuItem  key={section.title}>
+                    <NavigationMenuItem  key={section.titleKey}>
                         {!section.subItems ? (
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href={section.href}>{section.title}</Link>} />
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href={section.href}>{t(section.titleKey)}</Link>} />
                         ) : (
                             <>
-                                <NavigationMenuTrigger className="text-xl">{section.title}</NavigationMenuTrigger>
+                                <NavigationMenuTrigger className="text-xl">{t(section.titleKey)}</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="w-96 max-w-[calc(100vw-2rem)]">
                                         {section.subItems?.map((subItem) => (
-                                            <ListItem key={subItem.title} href={subItem.href} title={subItem.title} />
+                                            <ListItem key={subItem.titleKey} href={subItem.href} titleKey={subItem.titleKey} />
                                         ))}
                                     </ul>
                                 </NavigationMenuContent>
@@ -75,15 +75,16 @@ export function NavbarSections() {
 }
 
 function ListItem({
-    title,
+    titleKey,
     children,
     href,
     ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href: string; titleKey: string }) {
+    const t = useTranslations()
     return (
         <li {...props}>
             <NavigationMenuLink render={<Link href={href}><div className="flex flex-col gap-1 text-sm">
-                <div className="leading-none font-medium">{title}</div>
+                <div className="leading-none font-medium">{t(titleKey)}</div>
                 <div className="line-clamp-2 text-muted-foreground">{children}</div>
             </div></Link>} />
         </li>

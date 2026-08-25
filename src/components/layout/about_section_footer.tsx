@@ -1,35 +1,40 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 
 const AboutSection = () => {
+    const t = useTranslations("footer")
+    const c = useTranslations("common")
+
     const sections = [
         {
-            title: "My Account",
+            titleKey: "myAccount",
             sublinks: [
-                "My Account",
-                "Order History",
-                "Shoping Cart",
-                "Wishlist",
-                "Settings",
+                { key: "myAccount" },
+                { key: "orderHistory" },
+                { key: "shoppingCart" },
+                { key: "wishlist" },
+                { key: "settings" },
             ],
         },
         {
-            title: "Helps",
+            titleKey: "helps",
             sublinks: [
-                "Contact",
-                "Faqs",
-                "Terms & Condition",
-                "Privacy Policy",
+                { key: "contact" },
+                { key: "faqs" },
+                { key: "termsCondition" },
+                { key: "privacyPolicy" },
             ],
         },
         {
-            title: "Proxy",
+            titleKey: "proxy",
             sublinks: [
-                "About",
-                "Shop",
-                "Product",
-                "Products Details",
-                "Track Order",
+                { key: "about" },
+                { key: "shop" },
+                { key: "product" },
+                { key: "productsDetails" },
+                { key: "trackOrder" },
             ],
         },
     ]
@@ -52,13 +57,11 @@ const AboutSection = () => {
                 {/* About Shopery */}
                 <div className="lg:col-span-3">
                     <h2 className="mb-4 text-lg font-medium">
-                        About Shopery
+                        {t("aboutShopery")}
                     </h2>
 
                     <p className="mb-5 max-w-75 text-sm leading-6 text-white/50">
-                        Morbi cursus porttitor enim lobortis molestie.
-                        Duis gravida turpis dui, eget bibendum magna
-                        congue nec.
+                        {t("aboutDescription")}
                     </p>
 
                     <div className="flex items-center gap-3 text-sm">
@@ -69,7 +72,7 @@ const AboutSection = () => {
                             (219) 555-0114
                         </Link>
 
-                        <span className="text-white/50">or</span>
+                        <span className="text-white/50">{c("or")}</span>
 
                         <Link
                             href="mailto:Proxy@gmail.com"
@@ -83,21 +86,21 @@ const AboutSection = () => {
                 {/* My Account / Helps / Proxy */}
                 {sections.map((section) => (
                     <div
-                        key={section.title}
+                        key={section.titleKey}
                         className="lg:col-span-2"
                     >
                         <h2 className="mb-4 text-lg font-medium">
-                            {section.title}
+                            {t(section.titleKey)}
                         </h2>
 
                         <ul className="space-y-3">
                             {section.sublinks.map((link) => (
-                                <li key={link}>
+                                <li key={link.key}>
                                     <Link
                                         href="#"
                                         className={`text-sm transition-colors text-white/50 hover:text-white `}
                                     >
-                                        {link}
+                                        {t(link.key)}
                                     </Link>
                                 </li>
                             ))}
@@ -108,7 +111,7 @@ const AboutSection = () => {
                 {/* Instagram */}
                 <div className="lg:col-span-3">
                     <h2 className="mb-4 text-lg font-medium">
-                        Instagram
+                        {t("instagram")}
                     </h2>
 
                     <div className="grid grid-cols-4 gap-2">
