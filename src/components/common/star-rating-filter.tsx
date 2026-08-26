@@ -14,7 +14,7 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
     const searchParams = useSearchParams();
     const pathName = usePathname();
     const router = useRouter();
-    const t = useTranslations()
+    const c = useTranslations("common")
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -73,15 +73,15 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
                                     <Star
                                         key={i}
                                         className={`w-3.5 h-3.5 ${i < selectedRating
-                                                ? "fill-amber-400 text-amber-400"
-                                                : "fill-gray-200 text-gray-200"
+                                            ? "fill-amber-400 text-amber-400"
+                                            : "fill-gray-200 text-gray-200"
                                             }`}
                                     />
                                 ))}
                             </div>
                         </div>
                     ) : (
-                        <span className="text-gray-500">{t("common.selectRating")}</span>
+                        <span className="text-gray-500">{c("selectRating")}</span>
                     )}
                 </div>
 
@@ -102,7 +102,7 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
             {isOpen && (
                 <div className="absolute left-0 z-50 mt-1.5 p-3 bg-white border border-gray-100 rounded-md shadow-lg min-w-45">
                     <span className="text-[11px] font-medium text-gray-400 block mb-2">
-                        {t("common.filterByRating")}
+                        {c("filterByRating")}
                     </span>
 
                     <div className="flex items-center justify-between py-1 px-1 bg-gray-50 rounded-md border border-gray-100">
@@ -122,8 +122,8 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
                                 >
                                     <Star
                                         className={`w-5 h-5 transition-colors ${isFilled
-                                                ? "fill-amber-400 text-amber-400"
-                                                : "fill-gray-200 text-gray-300"
+                                            ? "fill-amber-400 text-amber-400"
+                                            : "fill-gray-200 text-gray-300"
                                             }`}
                                     />
                                 </button>
@@ -132,8 +132,8 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
                     </div>
 
                     <div className="flex items-center justify-between mt-2 text-[10px] text-gray-400">
-                        <span>{t("common.oneStarUp")}</span>
-                        <span>{t("common.fiveStars")}</span>
+                        <span>{c("oneStarUp")}</span>
+                        <span>{c("fiveStars")}</span>
                     </div>
                 </div>
             )}

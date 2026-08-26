@@ -1,3 +1,6 @@
+import ReactQueryProvider from "@/components/providers/_components/react-query.provider";
+
+
 
 export default async function LocaleLayout({
   children
@@ -5,7 +8,10 @@ export default async function LocaleLayout({
   children: React.ReactNode;
 }) {
 
+
   return (
-          children
+    <ReactQueryProvider>
+      {children}
+    </ReactQueryProvider>
   );
 }

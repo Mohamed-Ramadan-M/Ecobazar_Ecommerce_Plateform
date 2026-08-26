@@ -17,7 +17,11 @@
         "activeFilters": "Active Filters:",
         "resultsFound": "Results found.",
         "off": "Off",
-        "secure": "Secure"
+        "secure": "Secure",
+        "oneStarUp":"one Star Up",
+        "fiveStars":"five Stars",
+        "filterByRating":"filter By Rating",
+        "selectRating":"select Rating"
     },
     "navbar": {
         "allCategories": "all Categories",

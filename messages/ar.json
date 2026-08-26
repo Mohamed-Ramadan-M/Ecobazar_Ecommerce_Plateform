@@ -17,7 +17,11 @@
         "activeFilters": "المرشحات النشطة:",
         "resultsFound": "نتائج تم العثور عليها.",
         "off": "خصم",
-        "secure": "آمن"
+        "secure": "آمن",
+        "oneStarUp":"نجمه واحده",
+        "fiveStars":"خمس نجوم",
+        "filterByRating":"فلتره بالتقييم",
+        "selectRating":"تحديد التقييم"
     },
     "navbar": {
         "allCategories": "كل الأقسام",

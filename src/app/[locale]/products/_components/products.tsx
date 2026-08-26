@@ -11,42 +11,43 @@ import FilterSelect from "@/components/common/filter-select";
 import { Slider } from "@/components/ui/slider";
 import { RatingStarPicker } from "@/components/common/star-rating-filter";
 import { useTranslations } from "next-intl";
+import { useQuery} from "@tanstack/react-query";
 
-interface Product {
-    id: number;
-    name: string;
-    price: number;
-    originalPrice?: number;
-    rating: number;
-    image: string;
-    isOutofStock?: boolean;
-    salePercentage?: number;
-    isHovered?: boolean;
+type productsDataType = {
+    id: number,
+    name: string,
+    price: number,
+    originalPrice: number ,
+    rating: number,
+    image: string,
+    isOutofStock: boolean,
+    salePercentage: number,
+    categoryId: number,
+    description: string,
+    stock: number,
+    sku: string,
+    weight: string,
+    dimensions: string,
+    createdAt: Date,
+    updatedAt: Date
 }
-
-const PRODUCTS_DATA: Product[] = [
-    { id: 1, name: "Red Chili", price: 14.99, rating: 4, image: "/images/products-item-1.svg" },
-    { id: 2, name: "Big Potatoes", price: 14.99, rating: 4, image: "/images/products-item-2.svg" },
-    { id: 3, name: "Chanise Cabbage", price: 14.99, rating: 4, image: "/images/products-item-3.svg" },
-    { id: 4, name: "Ladies Finger", price: 14.99, originalPrice: 20.99, rating: 4, image: "/images/products-item-4.svg", isOutofStock: true },
-    { id: 5, name: "Red Tomato", price: 14.99, rating: 4, image: "/images/products-item-5.svg" },
-    { id: 6, name: "Eggplant", price: 14.99, rating: 4, image: "/images/products-item-6.svg" },
-    { id: 7, name: "Fresh Cauliflower", price: 14.99, rating: 4, image: "/images/products-item-7.svg" },
-    { id: 8, name: "Green Apple", price: 14.99, rating: 4, image: "/images/products-item-8.svg" },
-    { id: 9, name: "Fresh Mango", price: 14.99, rating: 4, image: "/images/products-item-9.svg" },
-    { id: 10, name: "Green Capsicum", price: 14.99, rating: 4, image: "/images/products-item-10.svg" },
-    { id: 11, name: "Green Chili", price: 14.99, rating: 4, image: "/images/products-item-11.svg" },
-    { id: 12, name: "Green Cucumber", price: 14.99, originalPrice: 20.99, rating: 4, image: "/images/products-item-12.svg", salePercentage: 50 },
-    { id: 13, name: "Green Lettuce", price: 14.99, rating: 4, image: "/images/products-item-13.svg" },
-    { id: 14, name: "Green Lettuce", price: 14.99, rating: 4, image: "/images/products-item-14.svg" },
-    { id: 15, name: "Ladies Finger", price: 14.99, rating: 4, image: "/images/products-item-15.svg" },
-    { id: 16, name: "Green Capsicum", price: 14.99, rating: 4, image: "/images/products-item-16.svg" },
-];
-
 export default function Products() {
     const [activePage, setActivePage] = useState(1);
-    const [value, setValue] = React.useState([200, 800])
+    const [value, setValue] = React.useState([800, 4000])
     const t = useTranslations()
+
+    const { isPending, data } = useQuery({
+        queryKey: ['products'],
+        queryFn: async () => {
+            const res = await fetch("/api/products",{
+                cache: 'no-store'
+            });
+            return res.json();
+        },
+        staleTime:300,
+    })
+    console.log(data)
+    if (isPending) return <p>loading...</p>;
 
     const categoryFilters = [
         { label: t("filter.vegetables"), value: "vegetables" },
@@ -80,9 +81,9 @@ export default function Products() {
                         <Slider
                             value={value}
                             onValueChange={(val) => setValue(val as [number, number])}
-                            max={1000}
+                            max={10000}
                             min={0}
-                            step={10}
+                            step={100}
                             className="w-24 sm:w-32 "
                             aria-label="Price Range"
                         />
@@ -130,8 +131,8 @@ export default function Products() {
 
             {/* 3. Product Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2">
-                {PRODUCTS_DATA.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                {data.map((data : productsDataType) => (
+                    <ProductCard key={data.id} product={data} />
                 ))}
             </div>
 
