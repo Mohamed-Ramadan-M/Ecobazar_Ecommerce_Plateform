@@ -1,8 +1,10 @@
 import { Eye, Heart, ShoppingBag, Star } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import ProductsDialog from "./products-dialog";
 
-interface Product {
+export interface Product {
     id: number;
     name: string;
     price: number;
@@ -12,10 +14,19 @@ interface Product {
     isOutofStock?: boolean;
     salePercentage?: number;
     isHovered?: boolean;
+    categoryId: number,
+    description: string,
+    stock: number,
+    sku: string,
+    weight: string,
+    dimensions: string,
+    createdAt: Date,
+    updatedAt: Date
 }
 
 export function ProductCard({ product }: { product: Product }) {
     const [isHovered, setIsHovered] = useState(false);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
 
     return (
         <div
@@ -27,12 +38,12 @@ export function ProductCard({ product }: { product: Product }) {
             {/* Badges */}
             <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
                 {product.isOutofStock && (
-                    <span className="bg-black text-white text-[10px] px-2 py-0.5 rounded uppercase font-medium">
+                    <span className="bg-danger text-white text-[10px] px-2 py-0.5 rounded uppercase font-medium">
                         Out of Stock
                     </span>
                 )}
                 {product.salePercentage && (
-                    <span className="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded font-medium">
+                    <span className="bg-warning text-white text-[10px] px-2 py-0.5 rounded font-medium">
                         Sale {product.salePercentage}%
                     </span>
                 )}
@@ -40,12 +51,26 @@ export function ProductCard({ product }: { product: Product }) {
 
             {/* Floating Action Buttons (Wishlist & Quick View) */}
             <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
-                <button className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-emerald-500 hover:text-white transition shadow-sm">
+                <button className="w-8 h-8 rounded-full bg-background border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition shadow-sm">
                     <Heart className="w-4 h-4" />
                 </button>
-                <button className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-emerald-500 hover:text-white transition shadow-sm">
-                    <Eye className="w-4 h-4" />
-                </button>
+
+                {/* Quick View Dialog Trigger */}
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                    <DialogTrigger >
+                        <button className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-emerald-500 hover:text-white transition shadow-sm">
+                            <Eye className="w-4 h-4" />
+                        </button>
+                    </DialogTrigger>
+
+                    {/* Dialog Overlay & Content */}
+                    <DialogContent className="sm:max-w-4xl w-full p-0 border-none bg-transparent shadow-none ">
+                        <ProductsDialog
+                            product={product}
+                        />
+                    </DialogContent>
+                </Dialog>
+
             </div>
 
             {/* Product Image */}
@@ -71,10 +96,7 @@ export function ProductCard({ product }: { product: Product }) {
 
                     {/* Cart Action Button */}
                     <button
-                        className={`w-8 h-8 rounded-full flex items-center justify-center transition ${isHovered
-                                ? "bg-emerald-600 text-white"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                            }`}
+                        className={"w-8 h-8 rounded-full flex items-center justify-center transition hover:bg-primary hover:text-white"}
                     >
                         <ShoppingBag className="w-4 h-4" />
                     </button>
@@ -98,8 +120,8 @@ export function ProductCard({ product }: { product: Product }) {
                         <Star
                             key={index}
                             className={`w-3.5 h-3.5 ${index < product.rating
-                                    ? "fill-amber-400 text-amber-400"
-                                    : "fill-gray-200 text-gray-200"
+                                ? "fill-amber-400 text-amber-400"
+                                : "fill-gray-200 text-gray-200"
                                 }`}
                         />
                     ))}

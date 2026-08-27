@@ -12,6 +12,7 @@ import { Slider } from "@/components/ui/slider";
 import { RatingStarPicker } from "@/components/common/star-rating-filter";
 import { useTranslations } from "next-intl";
 import { useQuery} from "@tanstack/react-query";
+import ProductsDialog from "@/components/common/products-dialog";
 
 type productsDataType = {
     id: number,
@@ -135,6 +136,11 @@ export default function Products() {
                     <ProductCard key={data.id} product={data} />
                 ))}
             </div>
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2">
+                {data.map((data : productsDataType) => (
+                    <ProductsDialog key={data.id} product={data} />
+                ))}
+            </div> */}
 
             {/* 4. Pagination */}
             <div className="flex items-center justify-center gap-2 mt-12">
