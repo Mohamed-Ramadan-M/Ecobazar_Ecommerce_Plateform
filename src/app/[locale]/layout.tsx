@@ -22,10 +22,10 @@ export default async function LocaleLayout({
     >
       <body>
         <NextIntlClientProvider messages={messages}>
-            <Navbar />
-            <RouteSection />
-            {children}
-            <Footer />
+          <Navbar />
+          <RouteSection />
+          {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
