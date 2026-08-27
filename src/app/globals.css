@@ -4,20 +4,23 @@
 
 :root {
   --background: #ffffff; /* White */
+  --primary: #00B207; /* Ecobazar main color Green */
+  --soft-Primary:#84D187 ;
+  --hard-primary:#2C742F;
+  --warning: #ff8a00; /* Orange */
+  --danger: #EA4B48; /* red */
+
   --foreground: #374151; /* Gray 700 */
   --card: #ffffff; /* White */
   --card-foreground: #374151; /* Gray 700 */
   --popover: #ffffff; /* White */
   --popover-foreground: #374151; /* Gray 700 */
-
-  --primary: #00B207; /* Ecobazar main color Green */
+  
   --primary-foreground: #ffffff; /* White */
 
   --secondary-background: #e1f4e9; /* Mint Green / Light Green */
   --secondary: #f3f4f6; /* Gray 100 */
   --secondary-foreground: #1a2e05; /* Dark Olive Green */
-
-  --orange-pho: #ff8a00; /* Orange */
 
   --muted: #f3f4f6; /* Gray 100 */
   --muted-foreground: #9ca3af; /* Gray 400 */
@@ -74,15 +77,18 @@
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-soft-primary: var(--soft-primary);
+  --color-hard-primary: var(--hard-primary);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-secondary-background: var(--secondary-background);
-  --color-orange-pho: var(--orange-pho);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
