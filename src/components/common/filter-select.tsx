@@ -32,8 +32,6 @@ export default function FilterSelect({
     const pathName = usePathname();
     const router = useRouter();
 
-    const selectedFilter = searchParams.get(filterName) || filterItems[0].value;
-
     const applyFilter = (value: string | null) => {
         if (!value) return;
         const newParams = new URLSearchParams(searchParams);

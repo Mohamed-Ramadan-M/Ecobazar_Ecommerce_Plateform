@@ -12,26 +12,10 @@ import { Slider } from "@/components/ui/slider";
 import { RatingStarPicker } from "@/components/common/star-rating-filter";
 import { useTranslations } from "next-intl";
 import { useQuery} from "@tanstack/react-query";
-import ProductsDialog from "@/components/common/products-dialog";
+import type { Product } from "@/types/products.type";
+// import ProductsDialog from "@/components/common/products-dialog";
 
-type productsDataType = {
-    id: number,
-    name: string,
-    price: number,
-    originalPrice: number ,
-    rating: number,
-    image: string,
-    isOutofStock: boolean,
-    salePercentage: number,
-    categoryId: number,
-    description: string,
-    stock: number,
-    sku: string,
-    weight: string,
-    dimensions: string,
-    createdAt: Date,
-    updatedAt: Date
-}
+
 export default function Products() {
     const [activePage, setActivePage] = useState(1);
     const [value, setValue] = React.useState([800, 4000])
@@ -47,7 +31,6 @@ export default function Products() {
         },
         staleTime:300,
     })
-    console.log(data)
     if (isPending) return <p>loading...</p>;
 
     const categoryFilters = [
@@ -132,12 +115,12 @@ export default function Products() {
 
             {/* 3. Product Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2">
-                {data.map((data : productsDataType) => (
+                {data.map((data : Product) => (
                     <ProductCard key={data.id} product={data} />
                 ))}
             </div>
             {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2">
-                {data.map((data : productsDataType) => (
+                {data.map((data : Product) => (
                     <ProductsDialog key={data.id} product={data} />
                 ))}
             </div> */}

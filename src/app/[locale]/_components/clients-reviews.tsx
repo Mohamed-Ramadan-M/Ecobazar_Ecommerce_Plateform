@@ -24,7 +24,7 @@ const ClientsReviews = async () => {
                                 height={50}
                                 width={50}
                             />
-                            <p>"{t("reviews.reviewText")}"</p>
+                            <p>&quot;{t("reviews.reviewText")}&quot;</p>
                         </div>
                         <div className='relative bg-secondary-background flex flex-col justify-center items-center p-5 gap-3'>
                             <span className='absolute top-0 -bottom-3 left-1/2 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-background'></span>
@@ -48,7 +48,7 @@ const ClientsReviews = async () => {
                                 width={50}
                                 loading="lazy"
                             />
-                            <p>"{t("reviews.reviewText")}"</p>
+                            <p>&quot;{t("reviews.reviewText")}&quot;</p>
                         </div>
                         <div className='relative bg-secondary-background flex flex-col justify-center items-center p-5 gap-3'>
                             <span className='absolute top-0 -bottom-3 left-1/2 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-background'></span>
@@ -72,7 +72,7 @@ const ClientsReviews = async () => {
                                 height={50}
                                 width={50}
                             />
-                            <p>"{t("reviews.reviewText")}"</p>
+                            <p>&quot;{t("reviews.reviewText")}&quot;</p>
                         </div>
                         <div className='relative bg-secondary-background flex flex-col justify-center items-center p-5 gap-3'>
                             <span className='absolute top-0 -bottom-3 left-1/2 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-background'></span>

@@ -2,7 +2,7 @@
 import { ProductCard } from "@/components/common/products-card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { useTranslations } from "next-intl"
 
 export const Products = () => {
@@ -85,7 +85,7 @@ export const Products = () => {
                         </span>
                     </div>
                     <div className="w-full flex justify-end items-center my-3">
-                        <Link href="en/products" className="text-primary">{t("common.viewAll")} <ArrowRight className="inline" /> </Link>
+                        <Link href="/products" className="text-primary">{t("common.viewAll")} <ArrowRight className="inline" /> </Link>
                     </div>
 
                     <div className="grid grid-cols-1 gap-y-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">

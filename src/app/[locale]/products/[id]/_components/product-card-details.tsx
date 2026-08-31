@@ -1,21 +1,12 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp, Heart, Minus, Plus, ShoppingBag, Star } from "lucide-react";
 import Image from "next/image";
-import type { Product } from "@/types/products.type";
-import {
-    Heart,
-    Minus,
-    Plus,
-    ShoppingBag,
-    Star,
-    ChevronUp,
-    ChevronDown,
-} from "lucide-react";
-import { Button } from "../ui/button";
 import { useState } from "react";
+import type { Product } from "@/types/products.type";
 
-
-export const ProductsDialog = ({ product }: { product: Product }) => {
+const ProductCardDetails = ({ product }: { product: Product }) => {
     const [quantity, setQuantity] = useState(1);
     const [activeImage, setActiveImage] = useState(product.image);
 
@@ -35,7 +26,7 @@ export const ProductsDialog = ({ product }: { product: Product }) => {
     };
 
     return (
-        <div className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden text-left">
+        <div className="relative w-full  bg-background p-6 md:p-8 ">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 {/* Left Column: Image Gallery */}
@@ -185,7 +176,7 @@ export const ProductsDialog = ({ product }: { product: Product }) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ProductsDialog;
+export default ProductCardDetails

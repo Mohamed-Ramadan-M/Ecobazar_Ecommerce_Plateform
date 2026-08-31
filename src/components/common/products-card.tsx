@@ -3,26 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import ProductsDialog from "./products-dialog";
-
-export interface Product {
-    id: number;
-    name: string;
-    price: number;
-    originalPrice?: number;
-    rating: number;
-    image: string;
-    isOutofStock?: boolean;
-    salePercentage?: number;
-    isHovered?: boolean;
-    categoryId: number,
-    description: string,
-    stock: number,
-    sku: string,
-    weight: string,
-    dimensions: string,
-    createdAt: Date,
-    updatedAt: Date
-}
+import type { Product } from "@/types/products.type";
 
 export function ProductCard({ product }: { product: Product }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -57,10 +38,13 @@ export function ProductCard({ product }: { product: Product }) {
 
                 {/* Quick View Dialog Trigger */}
                 <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                    <DialogTrigger >
-                        <button className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-emerald-500 hover:text-white transition shadow-sm">
-                            <Eye className="w-4 h-4" />
-                        </button>
+                    <DialogTrigger
+                        render={
+                            <button className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-emerald-500 hover:text-white transition shadow-sm p-0">
+                                <Eye className="w-4 h-4" />
+                            </button>
+                        }
+                    >
                     </DialogTrigger>
 
                     {/* Dialog Overlay & Content */}

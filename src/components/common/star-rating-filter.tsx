@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Star, ChevronDown, X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
@@ -18,15 +18,9 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-
-    const initialRating = searchParams.get("rating") ? Number(searchParams.get("rating")) : null;
-    const [selectedRating, setSelectedRating] = useState<number | null>(initialRating);
+    const currentParam = searchParams.get("rating");
+    const selectedRating = currentParam ? Number(currentParam) : null;
     const [hoverRating, setHoverRating] = useState<number | null>(null);
-
-    useEffect(() => {
-        const currentParam = searchParams.get("rating");
-        setSelectedRating(currentParam ? Number(currentParam) : null);
-    }, [searchParams]);
 
     const updateUrlQuery = (ratingValue: number | null) => {
         const newParams = new URLSearchParams(searchParams.toString());
@@ -42,7 +36,6 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
 
     const handleSelect = (rating: number) => {
         const newRating = selectedRating === rating ? null : rating;
-        setSelectedRating(newRating);
         updateUrlQuery(newRating);
 
         if (onRatingSelect) onRatingSelect(newRating);
@@ -51,7 +44,6 @@ export const RatingStarPicker = ({ onRatingSelect }: RatingStarPickerProps) => {
 
     const handleClear = (e: React.MouseEvent) => {
         e.stopPropagation();
-        setSelectedRating(null);
         updateUrlQuery(null);
 
         if (onRatingSelect) onRatingSelect(null);
