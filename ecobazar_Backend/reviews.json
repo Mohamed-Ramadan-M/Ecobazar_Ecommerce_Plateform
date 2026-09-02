@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "productId": 1,
+    "rating": 5,
+    "comment": "Excellent quality red chilies! They are fresh and have a great heat level.",
+    "author": "Sarah Johnson",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-20T14:30:00Z",
+    "updatedAt": "2024-01-20T14:30:00Z"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "productId": 2,
+    "rating": 4,
+    "comment": "Great potatoes, perfect for making mashed potatoes. Will order again.",
+    "author": "Mike Davis",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-21T09:15:00Z",
+    "updatedAt": "2024-01-21T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "userId": 3,
+    "productId": 8,
+    "rating": 5,
+    "comment": "The green apples are crisp and sweet. Perfect for my morning smoothie!",
+    "author": "Emily Chen",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-22T11:45:00Z",
+    "updatedAt": "2024-01-22T11:45:00Z"
+  },
+  {
+    "id": 4,
+    "userId": 4,
+    "productId": 17,
+    "rating": 5,
+    "comment": "Beautiful earthen bottle. It keeps water cool for hours. Highly recommend!",
+    "author": "Jenny Wilson",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-23T16:20:00Z",
+    "updatedAt": "2024-01-23T16:20:00Z"
+  },
+  {
+    "id": 5,
+    "userId": 5,
+    "productId": 12,
+    "rating": 4,
+    "comment": "Fresh cucumbers with a great sale price. Will definitely buy again.",
+    "author": "David Lee",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-24T08:00:00Z",
+    "updatedAt": "2024-01-24T08:00:00Z"
+  },
+  {
+    "id": 6,
+    "userId": 6,
+    "productId": 5,
+    "rating": 5,
+    "comment": "These tomatoes are perfect for making fresh salsa. Very ripe and flavorful.",
+    "author": "Lisa Anderson",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-25T13:10:00Z",
+    "updatedAt": "2024-01-25T13:10:00Z"
+  },
+  {
+    "id": 7,
+    "userId": 7,
+    "productId": 20,
+    "rating": 5,
+    "comment": "This mechanical pencil is incredibly precise. Perfect for technical drawing.",
+    "author": "Robert Brown",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-26T10:30:00Z",
+    "updatedAt": "2024-01-26T10:30:00Z"
+  },
+  {
+    "id": 8,
+    "userId": 8,
+    "productId": 9,
+    "rating": 4,
+    "comment": "Sweet and juicy mangoes. They arrived in perfect condition.",
+    "author": "Amanda White",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-27T15:45:00Z",
+    "updatedAt": "2024-01-27T15:45:00Z"
+  },
+  {
+    "id": 9,
+    "userId": 1,
+    "productId": 3,
+    "rating": 4,
+    "comment": "Fresh Chinese cabbage, great for making stir-fry. Good quality.",
+    "author": "Sarah Johnson",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-28T12:00:00Z",
+    "updatedAt": "2024-01-28T12:00:00Z"
+  },
+  {
+    "id": 10,
+    "userId": 2,
+    "productId": 23,
+    "rating": 4,
+    "comment": "These brass scissors are sharp and well-made. They cut smoothly.",
+    "author": "Mike Davis",
+    "avatar": "https://github.com/shadcn.png",
+    "isVerified": true,
+    "createdAt": "2024-01-29T09:30:00Z",
+    "updatedAt": "2024-01-29T09:30:00Z"
+  }
+]

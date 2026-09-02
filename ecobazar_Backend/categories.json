@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Vegetables",
+    "slug": "vegetables",
+    "image": "/images/vegetables-category.svg",
+    "description": "Fresh, organic vegetables sourced directly from local farms.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Fruits",
+    "slug": "fruits",
+    "image": "/images/fruits-category.svg",
+    "description": "Sweet and fresh fruits, picked at peak ripeness.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Dairy",
+    "slug": "dairy",
+    "image": "/images/milk.svg",
+    "description": "Fresh dairy products including milk, cheese, and yogurt.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Beverages",
+    "slug": "beverages",
+    "image": "/images/soda.svg",
+    "description": "Refreshing beverages including juices, sodas, and water.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Office Supplies",
+    "slug": "office-supplies",
+    "image": "/images/office-category.svg",
+    "description": "Essential office supplies for productivity and organization.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Breakfast",
+    "slug": "breakfast",
+    "image": "/images/breakfast.svg",
+    "description": "Quick and healthy breakfast options to start your day.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "Meat & Fish",
+    "slug": "meat-fish",
+    "image": "/images/meat-fish-category.svg",
+    "description": "Fresh and high-quality meat and fish products.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Snacks",
+    "slug": "snacks",
+    "image": "/images/snacks-category.svg",
+    "description": "Delicious snacks for every occasion.",
+    "parentId": null,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  }
+]

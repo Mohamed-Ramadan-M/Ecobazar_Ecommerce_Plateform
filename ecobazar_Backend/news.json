@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "The Future of Organic Farming",
+    "excerpt": "Exploring sustainable farming practices that are revolutionizing how we grow food.",
+    "slug": "future-of-organic-farming",
+    "image": "/images/orange.svg",
+    "day": "23",
+    "month": "JAN",
+    "author": "EcoBazar Team",
+    "content": "Organic farming is not just a trend, it's the future of sustainable agriculture. In this article, we explore the latest techniques and innovations that are making organic farming more efficient and accessible.",
+    "categoryId": 1,
+    "isPublished": true,
+    "createdAt": "2024-01-23T10:00:00Z",
+    "updatedAt": "2024-01-23T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "10 Healthy Smoothie Recipes",
+    "excerpt": "Delicious and nutritious smoothie recipes to kickstart your morning.",
+    "slug": "10-healthy-smoothie-recipes",
+    "image": "/images/mango_juise.svg",
+    "day": "23",
+    "month": "JAN",
+    "author": "EcoBazar Team",
+    "content": "Start your day with these refreshing smoothie recipes packed with vitamins and minerals. From tropical mango to berry blast, we've got you covered.",
+    "categoryId": 2,
+    "isPublished": true,
+    "createdAt": "2024-01-23T10:00:00Z",
+    "updatedAt": "2024-01-23T10:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Benefits of Eating Seasonal Fruits",
+    "excerpt": "Why choosing seasonal fruits is better for your health and the environment.",
+    "slug": "benefits-of-eating-seasonal-fruits",
+    "image": "/images/frutes.svg",
+    "day": "23",
+    "month": "JAN",
+    "author": "EcoBazar Team",
+    "content": "Eating seasonal fruits not only tastes better but also supports local farmers and reduces your carbon footprint. Learn why seasonal is the way to go.",
+    "categoryId": 2,
+    "isPublished": true,
+    "createdAt": "2024-01-23T10:00:00Z",
+    "updatedAt": "2024-01-23T10:00:00Z"
+  }
+]
