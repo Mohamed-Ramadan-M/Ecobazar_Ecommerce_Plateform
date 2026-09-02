@@ -1,43 +1,42 @@
 'use client'
 import Link from "next/link"
-import { NativeSelect, NativeSelectOption } from "../ui/native-select"
-import { SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, Select } from "../ui/select"
 import { MapPin } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
+import { useRouter, usePathname } from "@/i18n/navigation"
 
 export const NavbarHeaders = () => {
-    const items = [
-        { label: "en", value: "en" },
-        { label: "ar", value: "ar" },
-    ]
+    const c = useTranslations("common")
+    const locale = useLocale()
+    const router = useRouter()
+    const pathname = usePathname()
+
+    const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const newLocale = e.target.value
+        router.replace(pathname, { locale: newLocale })
+    }
+
     return (
         <div className="hidden bg-foreground text-background md:block">
             <div className="container m-0 mx-auto text-sm opacity-40">
                 <div className="flex flex-wrap items-center justify-around">
                     <span className="flex gap-1 items-center"> 
                         <MapPin />
-                        <p>Location</p>
+                        <p>{c("location")}</p>
                     </span>
                     <span className="flex flex-row items-center gap-3">
-                        <Select items={items} defaultValue="en">
-                            <SelectTrigger className="border-0 ">
-                                <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectGroup>
-                                    <SelectLabel>lang</SelectLabel>
-                                    {items.map((item) => (
-                                        <SelectItem key={item.value} value={item.value}>
-                                            {item.label}
-                                        </SelectItem>
-                                    ))}
-                                </SelectGroup>
-                            </SelectContent>
-                        </Select>
+                        <select
+                            value={locale}
+                            onChange={handleLanguageChange}
+                            className="border-0 bg-transparent text-sm cursor-pointer outline-none"
+                        >
+                            <option value="en">EN</option>
+                            <option value="ar">AR</option>
+                        </select>
                         <div className="w-px h-6 bg-gray-300" />
                         <span className="flex gap-1">
-                            <Link href="#">Sign in </Link>
+                            <Link href="#">{c("signIn")} </Link>
                             /
-                            <Link href="#">Sign UP </Link>
+                            <Link href="#">{c("signUp")} </Link>
                         </span>
                     </span>
                 </div>

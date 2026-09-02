@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function VideoSection() {
     const [isPlaying, setIsPlaying] = useState(false);
+    const t = useTranslations()
     return (
         <section className="w-full px-4 pt-16 sm:pt-20">
             <div className="max-w-4xl mx-auto">
@@ -29,10 +31,10 @@ export default function VideoSection() {
 
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
                                 <span className="text-sm tracking-widest uppercase mb-3 opacity-80">
-                                    Video
+                                    {t("news.videoLabel")}
                                 </span>
                                 <h2 className="text-xl sm:text-3xl md:text-4xl font-bold max-w-md leading-tight mb-8">
-                                    We&apos;re the Best Organic Farm in the World
+                                    {t("news.videoTitle")}
                                 </h2>
                                 <button className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white
                                     flex items-center justify-center

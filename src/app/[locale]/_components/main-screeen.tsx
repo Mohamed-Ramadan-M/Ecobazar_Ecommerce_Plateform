@@ -1,5 +1,4 @@
 import Image from "next/image"
-// import { Card, CardContent } from "@/components/ui/card"
 import {
     Carousel,
     CarouselContent,
@@ -7,8 +6,11 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { getTranslations } from "next-intl/server"
 
-const MainScreen = () => {
+const MainScreen = async () => {
+        const t = await getTranslations("hero")
+        const c = await getTranslations("common")
 
         return (
             <div className="w-full">
@@ -39,21 +41,21 @@ const MainScreen = () => {
                                         {/* Text Section */}
                                         <div className="flex w-full lg:w-1/2 flex-col items-center lg:items-start text-center lg:text-left justify-center gap-4 px-4 lg:pl-12">
                                             <span className="text-xs font-medium uppercase tracking-widest text-green-600">
-                                                Welcome to Shopery
+                                                {t("welcome")}
                                             </span>
 
                                             <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-green-950 lg:text-5xl">
-                                                Fresh & Healthy
+                                                {t("title1")}
                                                 <br />
-                                                Organic Food
+                                                {t("title2")}
                                             </h1>
 
                                             <p className="text-sm leading-6 text-gray-500 max-w-md">
-                                                Free shipping on all your order. We deliver, you enjoy
+                                                {t("subtitle")}
                                             </p>
 
                                             <button className="flex items-center gap-3 rounded-full bg-green-600 px-7 py-3 text-sm font-semibold text-white transition hover:bg-green-700 shadow-sm">
-                                                Shop now
+                                                {c("shopNow")}
                                                 <span>→</span>
                                             </button>
                                         </div>
@@ -62,7 +64,7 @@ const MainScreen = () => {
                                         <div className="absolute right-6 top-15 sm:left-[48%] sm:top-[28%] sm:-translate-x-1/2 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-orange-500 text-center text-white shadow-md z-10">
                                             <div>
                                                 <p className="text-base sm:text-lg font-bold leading-none">70%</p>
-                                                <p className="text-[8px] sm:text-[9px] font-medium uppercase">Off</p>
+                                                <p className="text-[8px] sm:text-[9px] font-medium uppercase">{c("off")}</p>
                                             </div>
                                         </div>
 

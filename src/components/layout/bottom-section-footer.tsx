@@ -16,7 +16,7 @@ const BottomSectionFooter = () => {
                 src="/images/Left_footer_bg.svg"
                 alt="left footer background"
                 loading="lazy"
-                className=" absolute start-0 hidden h-auto lg:block"
+                className=" absolute start-s-0 hidden h-auto lg:block"
                 width={280}
                 height={300}
             />
@@ -24,7 +24,7 @@ const BottomSectionFooter = () => {
                 src="/images/right_footer_bg.svg"
                 alt="right footer background"
                 loading="lazy"
-                className="absolute end-0 hidden h-auto lg:block"
+                className="absolute end-e-0 hidden h-auto lg:block"
                 width={215}
                 height={300}
             />

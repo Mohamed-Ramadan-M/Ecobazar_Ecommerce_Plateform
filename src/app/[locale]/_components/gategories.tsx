@@ -2,9 +2,11 @@
 import { Button } from "@/components/ui/button"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
+import { getTranslations } from "next-intl/server"
 
 
-const Gategories = () => {
+const Gategories = async () => {
+    const t = await getTranslations()
     return (
         <section className="w-full py-20 flex flex-wrap justify-center items-center gap-6 sm:gap-y-5 container">
             <div className="relative mx-auto w-full max-w-sm pt-0 rounded-2xl">
@@ -17,12 +19,12 @@ const Gategories = () => {
                     height={100}
                 />
                 <div className="absolute top-2 z-20 flex flex-col gap-0 w-[60%] p-3 sm:p-5">
-                    <CardTitle className="text-xl font-bold text-background sm:text-2xl md:text-3xl">100% Fresh Cow Milk</CardTitle>
+                    <CardTitle className="text-xl font-bold text-background sm:text-2xl md:text-3xl">{t("categories.freshMilk")}</CardTitle>
                     <CardDescription className="text-gray-300 mb-2 sm:mb-5">
-                        Starting at <span className="text-primary-foreground "> $14.99</span>
+                        {t("categories.startingAt")} <span className="text-primary-foreground "> $14.99</span>
                     </CardDescription>
                     <Button className="flex items-center gap-3 max-w-[75%]" variant="secondary">
-                        Shop now
+                        {t("common.shopNow")}
                         <span>→</span>
                     </Button>
                 </div>
@@ -38,11 +40,11 @@ const Gategories = () => {
                 />
                 <div className="absolute top-2 end-0 z-20 flex flex-col gap-0 w-[60%] p-3 sm:p-5">
                     <CardDescription className="text-black ">
-                        Drink Sale
+                        {t("categories.drinkSale")}
                     </CardDescription>
-                    <CardTitle className="text-xl font-bold text-black mb-2 sm:mb-5 sm:text-2xl md:text-3xl">Water & Soft Drink</CardTitle>
+                    <CardTitle className="text-xl font-bold text-black mb-2 sm:mb-5 sm:text-2xl md:text-3xl">{t("categories.waterDrink")}</CardTitle>
                     <Button className="flex items-center gap-3 max-w-[75%]" variant="secondary">
-                        Shop now
+                        {t("common.shopNow")}
                         <span>→</span>
                     </Button>
                 </div>
@@ -58,11 +60,11 @@ const Gategories = () => {
                 />
                 <div className="absolute top-2 z-20 flex flex-col gap-0 w-[60%] p-3 sm:p-5">
                     <CardDescription className="text-black ">
-                        100% Organic 
+                        {t("categories.organic")}
                     </CardDescription>
-                    <CardTitle className="text-xl font-bold text-black mb-2 sm:mb-5 sm:text-2xl md:text-3xl">Quick Breakfast</CardTitle>
+                    <CardTitle className="text-xl font-bold text-black mb-2 sm:mb-5 sm:text-2xl md:text-3xl">{t("categories.quickBreakfast")}</CardTitle>
                     <Button className="flex items-center gap-3 max-w-[75%]" variant="secondary">
-                        Shop now
+                        {t("common.shopNow")}
                         <span>→</span>
                     </Button>
                 </div>

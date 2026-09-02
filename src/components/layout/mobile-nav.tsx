@@ -16,23 +16,28 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
-
-const navLinks = [
-    { title: "home", href: "#" },
-    { title: "shop", href: "#" },
-    { title: "pages", href: "#" },
-    { title: "blog", href: "#" },
-]
-
-const categories = [
-    "Fresh Fruits",
-    "Fresh Vegetables",
-    "Meat & Fish",
-    "Snacks",
-    "Beverages",
-]
+import { useTranslations } from "next-intl"
 
 export function MobileNav() {
+    const t = useTranslations("navbar")
+    const m = useTranslations("mobileNav")
+    const c = useTranslations("common")
+    
+    const navLinks = [
+        { titleKey: "home", href: "#" },
+        { titleKey: "shop", href: "#" },
+        { titleKey: "pages", href: "#" },
+        { titleKey: "blog", href: "#" },
+    ]
+
+    const categories = [
+        m("freshFruits"),
+        m("freshVegetables"),
+        m("meatFish"),
+        m("snacks"),
+        m("beverages"),
+    ]
+
     return (
         <Sheet>
             <SheetTrigger
@@ -51,15 +56,15 @@ export function MobileNav() {
                 <SheetHeader className="border-b bg-secondary-background p-4">
                     <SheetTitle className="flex items-center gap-2 text-primary">
                         <Menu className="size-5" />
-                        Menu
+                        {c("menu")}
                     </SheetTitle>
                     <SheetDescription className="sr-only">
-                        Site navigation
+                        {m("siteNavigation")}
                     </SheetDescription>
                     <Field orientation="horizontal" className="mt-3">
-                        <Input type="search" placeholder="Search..." className="h-9 w-full rounded-full border-none bg-background shadow-none focus-visible:ring-0" />
+                        <Input type="search" placeholder={t("common.search")} className="h-9 w-full rounded-full border-none bg-background shadow-none focus-visible:ring-0" />
                         <Button variant="primary" size="sm" className="h-9 rounded-full">
-                            Search
+                            {c("search").replace('...', '')}
                         </Button>
                     </Field>
                 </SheetHeader>
@@ -67,7 +72,7 @@ export function MobileNav() {
                 <nav className="flex flex-col p-2">
                     {navLinks.map((link) => (
                         <SheetClose
-                            key={link.title}
+                            key={link.titleKey}
                             render={
                                 <Link
                                     href={link.href}
@@ -75,14 +80,14 @@ export function MobileNav() {
                                 />
                             }
                         >
-                            {link.title}
+                            {t(link.titleKey)}
                         </SheetClose>
                     ))}
                 </nav>
 
                 <div className="border-t px-2 py-2">
                     <p className="px-4 pt-2 pb-1 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-                        Categories
+                        {c("categories")}
                     </p>
                     <nav className="flex flex-col">
                         {categories.map((category) => (
@@ -104,14 +109,14 @@ export function MobileNav() {
                 <div className="mt-auto flex flex-col gap-3 border-t p-4">
                     <span className="flex items-center gap-2 text-sm text-muted-foreground">
                         <MapPin className="size-4" />
-                        Location
+                        {c("location")}
                     </span>
                     <div className="flex items-center gap-2">
                         <Button variant="primary" className="h-9 flex-1 rounded-full">
-                            Sign in
+                            {c("signIn")}
                         </Button>
                         <Button variant="outline" className="h-9 flex-1 rounded-full">
-                            Sign up
+                            {c("signUp")}
                         </Button>
                     </div>
                     <div className="flex items-center justify-around border-t pt-3">

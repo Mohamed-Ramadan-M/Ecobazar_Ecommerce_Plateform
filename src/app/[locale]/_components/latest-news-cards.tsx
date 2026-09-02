@@ -1,52 +1,18 @@
 "use client";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface NewsPost {
     id: number;
     day: string;
     month: string;
-    title: string;
-    excerpt: string;
+    titleKey: string;
+    excerptKey: string;
     image: string;
     href: string;
 }
-
-const posts: NewsPost[] = [
-    {
-        id: 1,
-        day: "23",
-        month: "JAN",
-        title: "Curabitur porttitor orci eget neque accumsan venenatis.",
-        excerpt:
-            "Nulla libero lorem, euismod venenatis nibh sed, sodales dictum ex. Etiam nisi augue, malesuada et pulvinar at, posuere eu neque.",
-        image:
-            "/images/orange.svg",
-        href: "#",
-    },
-    {
-        id: 2,
-        day: "23",
-        month: "JAN",
-        title: "Curabitur porttitor orci eget neque accumsan venenatis.",
-        excerpt:
-            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-        image:
-            "/images/mango_juise.svg",
-        href: "#",
-    },
-    {
-        id: 3,
-        day: "23",
-        month: "JAN",
-        title: "Curabitur porttitor orci eget neque accumsan venenatis.",
-        excerpt:
-            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
-        image:
-            "/images/frutes.svg",
-        href: "#",
-    },
-];
 
 function DateBadge({ day, month }: { day: string; month: string }) {
     return (
@@ -62,12 +28,13 @@ function DateBadge({ day, month }: { day: string; month: string }) {
 }
 
 function NewsCard({ post }: { post: NewsPost }) {
+    const t = useTranslations()
     return (
         <article className="flex flex-col group shadow-xl bg-background">
             <div className="relative overflow-hidden rounded-sm px-5 pt-5">
                 <Image
                     src={post.image}
-                    alt={post.title}
+                    alt={t(post.titleKey)}
                     loading="lazy"
                     className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
                     width={100}
@@ -80,18 +47,18 @@ function NewsCard({ post }: { post: NewsPost }) {
             <div className="p-5 flex flex-col flex-1 text-start">
 
                 <h3 className="text-[15px] font-bold text-gray-900 leading-snug mb-2 group-hover:text-green-600 transition-colors duration-200">
-                    {post.title}
+                    {t(post.titleKey)}
                 </h3>
 
                 <p className="text-sm text-gray-500 leading-relaxed flex-1">
-                    {post.excerpt}
+                    {t(post.excerptKey)}
                 </p>
 
                 <a
                     href={post.href}
                     className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-green-600 hover:gap-3 transition-all duration-200"
                 >
-                    Read More
+                    {t("common.readMore")}
                     <ArrowRight className="w-4 h-4" />
                 </a>
             </div>
@@ -100,12 +67,44 @@ function NewsCard({ post }: { post: NewsPost }) {
 }
 
 
-export default function LatestNews() {
+export default function LatestNewsCards() {
+    const t = useTranslations()
+
+    const posts: NewsPost[] = [
+        {
+            id: 1,
+            day: "23",
+            month: "JAN",
+            titleKey: "news.post1Title",
+            excerptKey: "news.post1Excerpt",
+            image: "/images/orange.svg",
+            href: "#",
+        },
+        {
+            id: 2,
+            day: "23",
+            month: "JAN",
+            titleKey: "news.post2Title",
+            excerptKey: "news.post2Excerpt",
+            image: "/images/mango_juise.svg",
+            href: "#",
+        },
+        {
+            id: 3,
+            day: "23",
+            month: "JAN",
+            titleKey: "news.post3Title",
+            excerptKey: "news.post3Excerpt",
+            image: "/images/frutes.svg",
+            href: "#",
+        },
+    ];
+
     return (
         <section className="w-full py-16 px-4">
             <div className="max-w-6xl mx-auto ">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-5 mx-auto">
-                    Latest News
+                    {t("news.title")}
                 </h2>
 
                 <div className="w-16 h-0.5 bg-primary mx-auto mb-7" />

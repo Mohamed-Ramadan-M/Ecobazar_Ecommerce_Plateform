@@ -8,8 +8,10 @@ import Image from "next/image"
 import { NavbarSections } from './navbar-sections'
 import NavbarHeaders from './navbar-top'
 import { MobileNav } from './mobile-nav'
+import { useTranslations } from "next-intl"
 
 export const Navbar = () => {
+    const c = useTranslations("common")
 
     return (
         <header>
@@ -31,8 +33,8 @@ export const Navbar = () => {
                     </div>
                     <span className="hidden lg:block">
                         <Field orientation="horizontal">
-                            <Input type="search" placeholder="Search..." className="w-90" />
-                            <Button variant="primary">Search</Button>
+                            <Input type="search" placeholder={c("search")} className="w-90" />
+                            <Button variant="primary">{c("search").replace('...', '')}</Button>
                         </Field>
                     </span>
                     <span className="flex shrink-0 flex-row items-center justify-center gap-2">
