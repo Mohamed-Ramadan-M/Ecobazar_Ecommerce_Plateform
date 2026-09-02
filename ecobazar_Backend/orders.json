@@ -1,0 +1,160 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "items": [
+      {
+        "productId": 1,
+        "name": "Red Chili",
+        "quantity": 2,
+        "price": 14.99
+      },
+      {
+        "productId": 5,
+        "name": "Red Tomato",
+        "quantity": 1,
+        "price": 14.99
+      }
+    ],
+    "subtotal": 44.97,
+    "shipping": 5.99,
+    "tax": 3.60,
+    "total": 54.56,
+    "status": "delivered",
+    "paymentMethod": "credit_card",
+    "shippingAddress": {
+      "street": "123 Green Valley Lane",
+      "city": "Portland",
+      "state": "Oregon",
+      "zipCode": "97201",
+      "country": "USA"
+    },
+    "trackingNumber": "ECO-TRK-001",
+    "createdAt": "2024-01-20T14:30:00Z",
+    "updatedAt": "2024-01-25T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "items": [
+      {
+        "productId": 2,
+        "name": "Big Potatoes",
+        "quantity": 3,
+        "price": 14.99
+      }
+    ],
+    "subtotal": 44.97,
+    "shipping": 5.99,
+    "tax": 3.60,
+    "total": 54.56,
+    "status": "shipped",
+    "paymentMethod": "paypal",
+    "shippingAddress": {
+      "street": "456 Oak Street",
+      "city": "Seattle",
+      "state": "Washington",
+      "zipCode": "98101",
+      "country": "USA"
+    },
+    "trackingNumber": "ECO-TRK-002",
+    "createdAt": "2024-01-21T09:15:00Z",
+    "updatedAt": "2024-01-23T14:00:00Z"
+  },
+  {
+    "id": 3,
+    "userId": 3,
+    "items": [
+      {
+        "productId": 8,
+        "name": "Green Apple",
+        "quantity": 2,
+        "price": 14.99
+      },
+      {
+        "productId": 9,
+        "name": "Fresh Mango",
+        "quantity": 1,
+        "price": 14.99
+      }
+    ],
+    "subtotal": 44.97,
+    "shipping": 5.99,
+    "tax": 3.60,
+    "total": 54.56,
+    "status": "processing",
+    "paymentMethod": "credit_card",
+    "shippingAddress": {
+      "street": "789 Maple Avenue",
+      "city": "San Francisco",
+      "state": "California",
+      "zipCode": "94102",
+      "country": "USA"
+    },
+    "trackingNumber": null,
+    "createdAt": "2024-01-22T11:45:00Z",
+    "updatedAt": "2024-01-22T11:45:00Z"
+  },
+  {
+    "id": 4,
+    "userId": 4,
+    "items": [
+      {
+        "productId": 17,
+        "name": "Earthen Bottle",
+        "quantity": 1,
+        "price": 48
+      }
+    ],
+    "subtotal": 48,
+    "shipping": 7.99,
+    "tax": 3.84,
+    "total": 59.83,
+    "status": "pending",
+    "paymentMethod": "credit_card",
+    "shippingAddress": {
+      "street": "321 Pine Road",
+      "city": "Austin",
+      "state": "Texas",
+      "zipCode": "73301",
+      "country": "USA"
+    },
+    "trackingNumber": null,
+    "createdAt": "2024-01-23T16:20:00Z",
+    "updatedAt": "2024-01-23T16:20:00Z"
+  },
+  {
+    "id": 5,
+    "userId": 5,
+    "items": [
+      {
+        "productId": 12,
+        "name": "Green Cucumber",
+        "quantity": 2,
+        "price": 14.99
+      },
+      {
+        "productId": 7,
+        "name": "Fresh Cauliflower",
+        "quantity": 1,
+        "price": 14.99
+      }
+    ],
+    "subtotal": 44.97,
+    "shipping": 5.99,
+    "tax": 3.60,
+    "total": 54.56,
+    "status": "cancelled",
+    "paymentMethod": "paypal",
+    "shippingAddress": {
+      "street": "654 Cedar Lane",
+      "city": "Denver",
+      "state": "Colorado",
+      "zipCode": "80201",
+      "country": "USA"
+    },
+    "trackingNumber": null,
+    "createdAt": "2024-01-24T08:00:00Z",
+    "updatedAt": "2024-01-24T12:00:00Z"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "email": "sarah.johnson@example.com",
+    "password": "hashed_password_1",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "phone": "+1-555-0101",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "123 Green Valley Lane",
+      "city": "Portland",
+      "state": "Oregon",
+      "zipCode": "97201",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-10T08:00:00Z",
+    "updatedAt": "2024-01-10T08:00:00Z"
+  },
+  {
+    "id": 2,
+    "email": "mike.davis@example.com",
+    "password": "hashed_password_2",
+    "firstName": "Mike",
+    "lastName": "Davis",
+    "phone": "+1-555-0102",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "456 Oak Street",
+      "city": "Seattle",
+      "state": "Washington",
+      "zipCode": "98101",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-11T09:00:00Z",
+    "updatedAt": "2024-01-11T09:00:00Z"
+  },
+  {
+    "id": 3,
+    "email": "emily.chen@example.com",
+    "password": "hashed_password_3",
+    "firstName": "Emily",
+    "lastName": "Chen",
+    "phone": "+1-555-0103",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "789 Maple Avenue",
+      "city": "San Francisco",
+      "state": "California",
+      "zipCode": "94102",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-12T10:00:00Z",
+    "updatedAt": "2024-01-12T10:00:00Z"
+  },
+  {
+    "id": 4,
+    "email": "jenny.wilson@example.com",
+    "password": "hashed_password_4",
+    "firstName": "Jenny",
+    "lastName": "Wilson",
+    "phone": "+1-555-0104",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "321 Pine Road",
+      "city": "Austin",
+      "state": "Texas",
+      "zipCode": "73301",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-13T11:00:00Z",
+    "updatedAt": "2024-01-13T11:00:00Z"
+  },
+  {
+    "id": 5,
+    "email": "david.lee@example.com",
+    "password": "hashed_password_5",
+    "firstName": "David",
+    "lastName": "Lee",
+    "phone": "+1-555-0105",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "654 Cedar Lane",
+      "city": "Denver",
+      "state": "Colorado",
+      "zipCode": "80201",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-14T12:00:00Z",
+    "updatedAt": "2024-01-14T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "email": "lisa.anderson@example.com",
+    "password": "hashed_password_6",
+    "firstName": "Lisa",
+    "lastName": "Anderson",
+    "phone": "+1-555-0106",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "987 Birch Street",
+      "city": "Chicago",
+      "state": "Illinois",
+      "zipCode": "60601",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-15T13:00:00Z",
+    "updatedAt": "2024-01-15T13:00:00Z"
+  },
+  {
+    "id": 7,
+    "email": "robert.brown@example.com",
+    "password": "hashed_password_7",
+    "firstName": "Robert",
+    "lastName": "Brown",
+    "phone": "+1-555-0107",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "456 Elm Drive",
+      "city": "Miami",
+      "state": "Florida",
+      "zipCode": "33101",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-16T14:00:00Z",
+    "updatedAt": "2024-01-16T14:00:00Z"
+  },
+  {
+    "id": 8,
+    "email": "amanda.white@example.com",
+    "password": "hashed_password_8",
+    "firstName": "Amanda",
+    "lastName": "White",
+    "phone": "+1-555-0108",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "customer",
+    "address": {
+      "street": "321 Walnut Avenue",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "zipCode": "02101",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-17T15:00:00Z",
+    "updatedAt": "2024-01-17T15:00:00Z"
+  },
+  {
+    "id": 9,
+    "email": "admin@ecobazar.com",
+    "password": "admin_password_hash",
+    "firstName": "Admin",
+    "lastName": "User",
+    "phone": "+1-555-0000",
+    "avatar": "https://github.com/shadcn.png",
+    "role": "admin",
+    "address": {
+      "street": "100 Eco Street",
+      "city": "New York",
+      "state": "New York",
+      "zipCode": "10001",
+      "country": "USA"
+    },
+    "isVerified": true,
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  }
+]
