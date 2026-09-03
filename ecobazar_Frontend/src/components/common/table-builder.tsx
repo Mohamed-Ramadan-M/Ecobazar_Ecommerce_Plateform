@@ -12,6 +12,7 @@ import { Button } from "../ui/button"
 import { Minus, Plus, XCircle } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import Link from "next/link"
 
 interface TableBuilderProps {
     tableData: Product[],
@@ -126,19 +127,21 @@ export function TableBuilder({ tableData, tableHeaders, type }: TableBuilderProp
                             )}
 
                             {/* Actions (Delete Icon) */}
-                            <TableCell className="text-right pr-6">
-                                {type === "wishlist" && (
-                                    <Button className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-4 py-2 font-medium">
-                                        Add to Cart
-                                    </Button>
-                                )}
-                                <button
-                                    type="button"
-                                    className="text-gray-300 hover:text-gray-500 transition-colors p-1 rounded-full inline-flex items-center justify-center"
-                                    aria-label="Remove item"
-                                >
-                                    <XCircle className="w-5 h-5 stroke-[1.5]" />
-                                </button>
+                            <TableCell className="text-center  ">
+                                <div className="flex items-center gap-2 h-full">
+                                    {type === "wishlist" && (
+                                        <Button className="rounded-full bg-hard-primary hover:bg-primary text-white text-xs px-4 py-2 font-medium">
+                                            Add to Cart
+                                        </Button>
+                                    )}
+                                    <button
+                                        type="button"
+                                        className="text-gray-300 hover:text-gray-500 transition-colors p-1 rounded-full inline-flex items-center justify-center"
+                                        aria-label="Remove item"
+                                    >
+                                        <XCircle className="w-5 h-5 stroke-[1.5]" />
+                                    </button>
+                                </div>
                             </TableCell>
                         </TableRow>
                     ))}
@@ -147,11 +150,14 @@ export function TableBuilder({ tableData, tableHeaders, type }: TableBuilderProp
 
             {/* Optional Table Footer buttons matching image */}
             <div className="flex items-center justify-between p-4 bg-white border-t border-gray-100">
+
                 <button className="px-6 py-3 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-sm transition">
-                    Return to shop
+                    <Link href="/">
+                        Return to shop
+                    </Link>
                 </button>
                 <button className="px-6 py-3 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-sm transition">
-                    Update Cart
+                    Update {type === "cart" ? " Cart" : " Wishlist"}
                 </button>
             </div>
         </div>
