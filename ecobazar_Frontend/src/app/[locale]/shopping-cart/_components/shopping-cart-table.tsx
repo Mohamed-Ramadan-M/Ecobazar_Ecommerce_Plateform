@@ -1,6 +1,6 @@
 import { TableBuilder } from "@/components/common/table-builder"
 import { Product } from "@/types/products.type"
-import CardTotal from "./card-total"
+import CardTotal from "../../../../components/common/card-total"
 import CouponCode from "./coupon-code"
 
 
@@ -87,7 +87,7 @@ const ShoppingCartTable = () => {
                     </div>
                     {/* Right Column (Cart Total Summary) */}
                     <div className="lg:col-span-1">
-                        <CardTotal />
+                        <CardTotal products={cartData} type="cart" />
                     </div>
 
                 </div>
