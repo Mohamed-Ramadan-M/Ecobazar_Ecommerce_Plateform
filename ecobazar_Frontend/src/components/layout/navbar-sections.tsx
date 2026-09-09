@@ -17,7 +17,7 @@ import {
 const navSections: { titleKey: string; href: string; subItems?: { titleKey: string; href: string }[] }[] = [
     {
         titleKey: "Home",
-        href: "#"
+        href: "/"
     },
     {
         titleKey: "Shop",
@@ -29,7 +29,7 @@ const navSections: { titleKey: string; href: string; subItems?: { titleKey: stri
     },
     {
         titleKey: "Blog",
-        href: "#"
+        href: "/blogs"
     },
     {
         titleKey: "About Us",
