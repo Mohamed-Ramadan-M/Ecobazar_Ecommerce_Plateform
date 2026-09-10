@@ -29,6 +29,7 @@ export const Navbar = () => {
         // Handle the confirm action here
         toast.success("Confirm button clicked!")
         setOpenWishlist(false); // Close the drawer after confirming
+        redirect("/wishlist");
     }
     const cartData : Product[] = [
         {
