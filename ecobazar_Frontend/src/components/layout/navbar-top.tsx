@@ -34,9 +34,9 @@ export const NavbarHeaders = () => {
                         </select>
                         <div className="w-px h-6 bg-gray-300" />
                         <span className="flex gap-1">
-                            <Link href="#">{c("signIn")} </Link>
+                            <Link href="/login">{c("signIn")} </Link>
                             /
-                            <Link href="#">{c("signUp")} </Link>
+                            <Link href="/register">{c("signUp")} </Link>
                         </span>
                     </span>
                 </div>
